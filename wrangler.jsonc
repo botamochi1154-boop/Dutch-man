@@ -4,6 +4,8 @@
   "name": "warinote",
   "main": ".open-next/worker.js",
   "upload_source_maps": true,
+  // https://<name>.<subdomain>.workers.dev の公開URLを有効にする
+  "workers_dev": true,
   "compatibility_date": "2026-11-19",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
