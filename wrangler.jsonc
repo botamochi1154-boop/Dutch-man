@@ -13,8 +13,12 @@
   "observability": {
     "enabled": true
   },
-  // SUPABASE_URL / SUPABASE_ANON_KEY は Cloudflare ダッシュボードの
-  // Settings > Variables and Secrets で設定する（デプロイ時に上書きされないよう keep_vars を有効化）。
-  // ※ service_role キーは絶対に設定しないこと。
+  // Supabase の接続先と publishable（公開用）キー。どちらもブラウザに渡す前提の公開値なのでここに書いてよい。
+  // ※ secret / service_role キーは絶対に書かないこと。
+  "vars": {
+    "SUPABASE_URL": "https://yxqfxaqhaampcoztmcaj.supabase.co",
+    "SUPABASE_ANON_KEY": "sb_publishable_5hy_CrLzZZYJXTPZ5n8_lg_kbhxOwYy"
+  },
+  // ダッシュボードで追加した変数をデプロイ時に消さない
   "keep_vars": true
 }
