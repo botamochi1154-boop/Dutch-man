@@ -148,6 +148,8 @@ create policy notifications_delete_own
   using (user_id = (select auth.uid()));
 
 -- ---------- テーブル権限（列単位で最小化） ----------
+-- 新規作成時の「Grant API access to new tables automatically」設定に依存しないよう明示する
+grant usage on schema public to anon, authenticated;
 revoke all on all tables in schema public from anon, authenticated;
 grant select on all tables in schema public to authenticated;
 grant update (display_name, avatar_color) on public.profiles to authenticated;
